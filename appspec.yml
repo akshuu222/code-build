@@ -9,14 +9,14 @@ hooks:
   BeforeInstall:
     - location: scripts/stop_container.sh
       timeout: 300
-      runas: ec2-user
+      runas: ubuntu
 
   AfterInstall:
     - location: scripts/pull_image.sh
       timeout: 300
-      runas: ec2-user
+      runas: ubuntu
 
   ApplicationStart:
     - location: scripts/start_container.sh
       timeout: 300
-      runas: ec2-user
+      runas: ubuntu
