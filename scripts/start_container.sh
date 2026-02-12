@@ -1,7 +1,10 @@
 #!/bin/bash
 
-IMAGE_NAME=akshuu222/web:latest
+REGISTRY_URL=924358636787.dkr.ecr.us-east-1.amazonaws.com
+IMAGE_NAME=${REGISTRY_URL}/prod/node-todo:latest
 CONTAINER_NAME=my-app-container
+
+aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${REGISTRY_URL}
 
 echo "Starting new container...."
 docker run -d \
