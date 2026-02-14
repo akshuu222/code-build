@@ -11,11 +11,6 @@ hooks:
       timeout: 300
       runas: ubuntu
 
-  AfterInstall:
-    - location: scripts/pull_image.sh
-      timeout: 300
-      runas: ubuntu
-
   ApplicationStart:
     - location: scripts/start_container.sh
       timeout: 300
